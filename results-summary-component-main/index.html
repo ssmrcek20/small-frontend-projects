@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Results summary component</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <script src="main.js"></script>
+  </head>
+  <body class="h-screen font-roboto font-medium md:flex md:justify-center">
+    <div
+      class="md:grid md:max-w-2xl md:grid-cols-2 md:self-center md:rounded-3xl md:shadow-2xl"
+    >
+      <div
+        class="rounded-b-3xl bg-gradient-to-b from-Light-slate-blue to-Light-royal-blue text-center text-white md:rounded-t-3xl"
+      >
+        <div class="p-5 text-lg text-gray-400 md:p-8 md:text-xl">
+          Your Result
+        </div>
+        <div
+          class="m-auto w-36 rounded-full bg-gradient-to-b from-Violet-blue md:w-44"
+        >
+          <div class="pt-10 text-6xl font-extrabold md:pt-12">76</div>
+          <div class="p-3 text-gray-400 md:pb-8">of 100</div>
+        </div>
+        <div class="p-5 text-3xl md:p-8">Great</div>
+        <div class="px-10 pb-7 text-gray-400 md:px-14 md:pb-9">
+          You scored higher than 65% of the people who have taken these tests.
+        </div>
+      </div>
+      <div class="">
+        <div class="p-6 text-lg font-bold md:p-8 md:text-xl">Summary</div>
+        <div
+          class="relative mx-6 mb-5 flex w-[calc(100%-3rem)] rounded-xl bg-red-50 p-4 md:mx-8 md:w-[calc(100%-4rem)]"
+        >
+          <div
+            class="absolute left-0 top-0 -z-10 h-full w-full rounded-xl bg-red-800"
+          ></div>
+          <img id="icon1" src="" alt="icon" />
+          <div id="category1" class="flex-grow pl-3 text-red-500"></div>
+          <div id="score1" class="pr-1"></div>
+          <div class="text-gray-400">/ 100</div>
+        </div>
+        <div
+          class="relative mx-6 mb-5 flex w-[calc(100%-3rem)] rounded-xl bg-yellow-50 p-4 md:mx-8 md:w-[calc(100%-4rem)]"
+        >
+          <div
+            class="absolute left-0 top-0 -z-10 h-full w-full rounded-xl bg-yellow-800"
+          ></div>
+          <img id="icon2" src="" alt="icon" />
+          <div id="category2" class="flex-grow pl-3 text-yellow-500"></div>
+          <div id="score2" class="pr-1"></div>
+          <div class="text-gray-400">/ 100</div>
+        </div>
+        <div
+          class="relative mx-6 mb-5 flex w-[calc(100%-3rem)] rounded-xl bg-green-50 p-4 md:mx-8 md:w-[calc(100%-4rem)]"
+        >
+          <div
+            class="absolute left-0 top-0 -z-10 h-full w-full rounded-xl bg-green-800"
+          ></div>
+          <img id="icon3" src="" alt="icon" />
+          <div id="category3" class="flex-grow pl-3 text-green-500"></div>
+          <div id="score3" class="pr-1"></div>
+          <div class="text-gray-400">/ 100</div>
+        </div>
+        <div
+          class="relative mx-6 mb-5 flex w-[calc(100%-3rem)] rounded-xl bg-blue-50 p-4 md:mx-8 md:w-[calc(100%-4rem)]"
+        >
+          <div
+            class="absolute left-0 top-0 -z-10 h-full w-full rounded-xl bg-blue-800"
+          ></div>
+          <img id="icon4" src="" alt="icon" />
+          <div id="category4" class="flex-grow pl-3 text-blue-500"></div>
+          <div id="score4" class="pr-1"></div>
+          <div class="text-gray-400">/ 100</div>
+        </div>
+        <button
+          class="mx-6 mb-6 mt-1 w-[calc(100%-3rem)] rounded-full bg-blue-950 px-10 py-4 text-xl text-white hover:bg-gradient-to-b hover:from-Light-slate-blue hover:to-Light-royal-blue focus:bg-gradient-to-b focus:from-Light-slate-blue focus:to-Light-royal-blue md:mx-8 md:mb-8 md:mt-3 md:w-[calc(100%-4rem)]"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
