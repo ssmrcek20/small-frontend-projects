@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-shadow {
+        text-shadow: 1px 1px 0px black;
+    }
+}
+
+@layer components {
+    .input {
+        @apply w-full mt-1 p-2 text-lg placeholder-Secondary border border-Secondary-darker rounded-lg hover:border-Gradient-start focus:outline-Gradient-start;
+    }
+}
