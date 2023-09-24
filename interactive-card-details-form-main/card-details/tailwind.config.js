@@ -19,6 +19,13 @@ module.exports = {
       },
       fontSize: {
         "regular-size": "1.125rem"
+      },
+      screens: {
+        '2md': '900px',
+        '2lg': '1200px'
+      },
+      boxShadow: {
+        'xl-my': '0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3)',
       }
     },
   },

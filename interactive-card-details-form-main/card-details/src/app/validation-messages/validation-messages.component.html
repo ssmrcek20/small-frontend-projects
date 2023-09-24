@@ -1,0 +1,22 @@
+<div *ngIf="control.invalid && (control.dirty || control.touched)" class="mt-2 tracking-normal text-Error text-xs"
+    [@fadeInOut]>
+    <div *ngIf="control.hasError('required')" [@fadeInOut]>
+        Can't be blank
+    </div>
+    <div *ngIf="control.hasError('minlength')" [@fadeInOut]>
+        Must have {{control.getError('minlength').requiredLength}} characters
+    </div>
+    <div *ngIf="control.hasError('pattern') && !isSpecificControl('ccmonth') && !isSpecificControl('cardnumber') && !isSpecificControl('name')"
+        [@fadeInOut]>
+        Wrong format, numbers only
+    </div>
+    <div *ngIf="control.hasError('pattern') && isSpecificControl('ccmonth')" [@fadeInOut]>
+        Invalid month
+    </div>
+    <div *ngIf="control.hasError('pattern') && isSpecificControl('cardnumber')" [@fadeInOut]>
+        Wrong format, 16 numbers only with space every 4 numbers
+    </div>
+    <div *ngIf="control.hasError('pattern') && isSpecificControl('name')" [@fadeInOut]>
+        Write your first and last name
+    </div>
+</div>

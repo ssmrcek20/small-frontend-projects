@@ -1,52 +1,97 @@
-<div class="absolute top-8 right-4 w-72 text-white">
-  <img class="shadow-lg" src="../assets/images/bg-card-back.png" alt="Back of credit card">
-  <div class="absolute top-[4.4rem] left-[14.5rem] text-[0.6rem]">000</div>
+<div
+  class="shadow-xl-my rounded-xl overflow-hidden absolute top-8 right-4 w-72 text-white sm:right-20 md:right-32 2md:right-auto 2md:left-[14%] 2md:top-[55%] 2lg:w-[420px] 2lg:left-[16%]">
+  <img src="../assets/images/bg-card-back.png" alt="Back of credit card">
+  <div class="absolute top-[4.4rem] left-[14.5rem] text-[0.6rem] 2lg:top-[103px] 2lg:left-[333px] 2lg:text-[14px]">{{cvc
+    === '' ? '000' : cvc}}</div>
 </div>
 
-<div class="absolute top-[7.563rem] left-4 w-72 text-white">
-  <img class="shadow-lg" src="../assets/images/bg-card-front.png" alt="Front of credit card">
-  <img class="absolute w-14 top-4 left-5" src="../assets/images/card-logo.svg" alt="card-logo">
-  <div class="absolute top-20 left-5 tracking-[0.125em] text-lg text-shadow">0000 0000 0000 0000</div>
-  <div class="absolute top-32 left-5 uppercase text-[0.6rem] text-shadow">Jane Appleseed</div>
-  <div class="absolute top-32 left-[14.6rem] text-[0.6rem] text-shadow">00/00</div>
+<div
+  class="shadow-xl-my rounded-xl overflow-hidden absolute top-[7.563rem] left-4 w-72 text-white sm:left-20 md:left-32 2md:left-[10%] 2md:top-[20%] 2lg:w-[420px]">
+  <img src="../assets/images/bg-card-front.png" alt="Front of credit card">
+  <img class="absolute w-14 top-4 left-5 2lg:w-[75px] 2lg:top-6 2lg:left-7" src="../assets/images/card-logo.svg"
+    alt="card-logo">
+  <div
+    class="absolute top-20 left-5 tracking-[0.125em] text-lg text-shadow 2lg:top-[130px] 2lg:left-[28px] 2lg:text-[26px]">
+    {{cardnumber === '' ? '0000 0000 0000 0000'
+    : cardnumber}}</div>
+  <div
+    class="absolute top-32 left-5 uppercase text-[0.6rem] text-shadow 2lg:top-[185px] 2lg:left-[28px] 2lg:text-[14px]">
+    {{name === '' ? 'Jane Appleseed' : name}}
+  </div>
+  <div
+    class="absolute top-32 left-[14.6rem] text-[0.6rem] text-shadow 2lg:top-[185px] 2lg:left-[335px] 2lg:text-[14px]">
+    {{ccmonth === '' ? '00' : ccmonth}}/{{ccyear === '' ? '00' : ccyear}}
+  </div>
 </div>
 
-<img src="../assets/images/bg-main-mobile.png" alt="Gradient colors background" srcset="">
 
-<div>
-  <form class="mt-10 px-5 py-9 grid gap-3">
+<div class="flex flex-col h-full gap-10 items-center 2md:flex-row">
+  <picture class="w-full 2md:h-full 2md:w-auto">
+    <source srcset="../assets/images/bg-main-desktop.png" media="(min-width: 900px)" />
+    <img class="h-60 w-full 2md:h-full 2md:max-w-lg" src="../assets/images/bg-main-mobile.png"
+      alt="Gradient colors background" />
+  </picture>
+
+  <form *ngIf="formShowing" class="px-5 py-9 grid gap-3 h-fit mx-auto sm:px-20 md:px-32 2md:max-w-[600px]"
+    #cardFormR="ngForm" (ngSubmit)="onSubmit(cardFormR)" novalidate>
+
     <div>
       <label class="text-xs uppercase">Cardholder Name</label>
       <input class="input" type="text" aria-label="Cardholder Name" name="name" autocomplete="name"
-        placeholder="e.g. Jane Appleseed">
+        placeholder="e.g. Jane Appleseed" [(ngModel)]="name" #nameR="ngModel" [ngClass]="checkIfValid(nameR)" required
+        maxlength="20" pattern="^.+ .+$">
+      <app-validation-messages [control]="nameR"></app-validation-messages>
     </div>
+
     <div>
       <label class="text-xs uppercase">Card Number</label>
-      <input class="input" type="number" aria-label="Card Number" name="cardnumber" autocomplete="cc-number"
-        placeholder="e.g. 1234 5678 9123 0000">
+      <input class="input" type="text" aria-label="Card Number" name="cardnumber" autocomplete="cc-number"
+        placeholder="e.g. 1234 5678 9123 0000" [(ngModel)]="cardnumber" #numberR="ngModel"
+        [ngClass]="checkIfValid(numberR)" required maxlength="19" pattern="^\d{4} \d{4} \d{4} \d{4}$">
+      <app-validation-messages [control]="numberR"></app-validation-messages>
     </div>
+
     <div class="grid grid-cols-2 gap-3">
+
       <div>
         <label class="text-xs uppercase">Exp. Date (MM/YY)</label>
         <div class="grid grid-cols-2 gap-2">
-          <input class="input" type="number" aria-label="Exp. Month" name="ccmonth" autocomplete="cc-exp-month"
-            placeholder="MM">
-          <input class="input" type="number" aria-label="Exp. Year" name="ccyear" autocomplete="cc-exp-year"
-            placeholder="YY">
+          <div>
+            <input class="input" type="text" aria-label="Exp. Month" name="ccmonth" autocomplete="cc-exp-month"
+              placeholder="MM" [(ngModel)]="ccmonth" #monthR="ngModel" [ngClass]="checkIfValid(monthR)" required
+              minlength="2" maxlength="2" pattern="^(0[1-9]|1[0-2])$">
+            <app-validation-messages [control]="monthR"></app-validation-messages>
+          </div>
+          <div>
+            <input class="input" type="text" aria-label="Exp. Year" name="ccyear" autocomplete="cc-exp-year"
+              placeholder="YY" [(ngModel)]="ccyear" #yearR="ngModel" [ngClass]="checkIfValid(yearR)" required
+              minlength="2" maxlength="2" pattern="^[0-9]+$">
+            <app-validation-messages [control]="yearR"></app-validation-messages>
+          </div>
         </div>
       </div>
+
       <div>
         <label class="text-xs uppercase">CVC</label>
-        <input class="input" type="number" name="cvc" autocomplete="cc-csc" placeholder="e.g. 123">
+        <input class="input" type="text" name="cvc" autocomplete="cc-csc" placeholder="e.g. 123" [(ngModel)]="cvc"
+          #cvcR="ngModel" [ngClass]="checkIfValid(cvcR)" required minlength="3" maxlength="3" pattern="^[0-9]+$">
+        <app-validation-messages [control]="cvcR"></app-validation-messages>
       </div>
+
     </div>
-    <button class="bg-Primary text-white rounded-lg py-3 mt-4">Confirm</button>
+
+    <button type="submit"
+      class="relative bg-Primary text-white rounded-lg py-3 mt-4 disabled:opacity-50 after:absolute after:bg-Primary after:top-0 after:left-0 after:right-0 after:bottom-0 after:-z-10 after:rounded-lg after:shadow-lg after:transition after:hover:scale-105 after:hover:shadow-xl-my after:disabled:hover:scale-0 after:disabled:hover:shadow-lg after:active:scale-100 after:active:shadow-lg"
+      [disabled]="!cardFormR.valid">Confirm</button>
+
   </form>
+
+  <div *ngIf="!formShowing" class="px-5 py-9 grid gap-4 h-fit mx-auto sm:px-20 md:px-32 2md:max-w-[600px]">
+    <img class="justify-self-center mb-5" src="../assets/images/icon-complete.svg" alt="Complete icon">
+    <h1 class="justify-self-center text-3xl uppercase">Thank you!</h1>
+    <p class="justify-self-center text-Secondary-darker">We've added your card details</p>
+    <button (click)="returnToHome()"
+      class="relative bg-Primary text-white rounded-lg py-3 mt-5 disabled:opacity-50 after:absolute after:bg-Primary after:top-0 after:left-0 after:right-0 after:bottom-0 after:-z-10 after:rounded-lg after:shadow-xl after:transition after:hover:scale-105 after:hover:shadow-xl-my after:disabled:hover:scale-0 after:disabled:hover:shadow-lg after:active:scale-100 after:active:shadow-xl">Continue</button>
+  </div>
+
 </div>
-
-
-<!-- Completed state start -->
-
-Thank you!
-We've added your card details
-Continue

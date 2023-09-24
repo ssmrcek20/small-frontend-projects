@@ -10,6 +10,6 @@
 
 @layer components {
     .input {
-        @apply w-full mt-1 p-2 text-lg placeholder-Secondary border border-Secondary-darker rounded-lg hover:border-Gradient-start focus:outline-Gradient-start;
+        @apply w-full mt-1 p-2 text-lg placeholder-Secondary border border-Secondary-darker rounded-lg hover:border-Gradient-start focus:outline-Gradient-start transition;
     }
 }
