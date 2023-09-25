@@ -26,9 +26,3 @@ jobs:
 
       - name: Build Project
         run: npm run build
-
-      - name: Deploy to GitHub Pages
-        run: |
-          mkdir -p docs
-          cp -R build/* docs/
-        if: success()
