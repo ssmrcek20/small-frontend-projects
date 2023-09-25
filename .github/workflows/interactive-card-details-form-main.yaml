@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.0
 
+      - name: tree
+        run: tree
+
       - name: Navigate to workspace
         run: cd $GITHUB_WORKSPACE
         
