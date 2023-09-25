@@ -6,6 +6,8 @@
 ![Static Badge](https://img.shields.io/badge/TypeScript-454545?logo=typescript)
 ![Static Badge](https://img.shields.io/badge/Angular-454545?logo=angular&logoColor=%23DD0031)
 
+![Static Badge](https://img.shields.io/badge/2-Intermediate-%23E8A530)
+
 
 ![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)
 
