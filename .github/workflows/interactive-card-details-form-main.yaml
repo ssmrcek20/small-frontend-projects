@@ -30,9 +30,12 @@ jobs:
         run: npm run build
         working-directory: ${{env.working-directory}}
 
-      - name: Deploy
-        if: success()
-        uses: peaceiris/actions-gh-pages@v3
+      - name: tree
+        run: tree
+
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/card-details
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_branch: main
+          publish_dir: ${{env.working-directory}}/dist/card-details
