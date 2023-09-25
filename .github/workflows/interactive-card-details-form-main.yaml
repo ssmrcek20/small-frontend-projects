@@ -12,25 +12,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+       working-directory: ./interactive-card-details-form-main/card-details
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.0
-
-      - name: tree
-        run: tree
-
-      - name: Navigate to workspace
-        run: cd $GITHUB_WORKSPACE
-        
-      - name: Change Directory
-        run: cd interactive-card-details-form-main/card-details
       
       - name: Set up Node.js
         uses: actions/setup-node@v3.8.1
 
       - name: Install Dependencies
         run: npm install
+        working-directory: ${{env.working-directory}}
 
       - name: Build Project
         run: npm run build
+        working-directory: ${{env.working-directory}}
