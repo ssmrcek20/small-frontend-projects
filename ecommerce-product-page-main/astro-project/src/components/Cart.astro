@@ -1,0 +1,44 @@
+<div class="cartPanel">
+    <h3>Cart</h3>
+    <hr>
+    <div class="empty-text">Your cart is empty.</div>
+    <div class="cart-items"></div>
+</div>
+
+<script>
+
+</script>
+
+<style>
+    .cartPanel {
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: calc(100% - 1rem);
+        z-index: 5;
+        background-color: var(--white);
+        margin: 0 .5rem;
+        border-radius: .6rem;
+        min-height: 260px;
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+        display: none;
+    }
+    h3 {
+        padding: 1.4rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    hr {
+        height: 1px;
+        border: none;
+        background-color: var(--grayish-blue);
+    }
+    .empty-text {
+        padding: 4.5rem 0rem;
+        text-align: center;
+        color: var(--dark-grayish-blue);
+        font-weight: 700;
+    }
+</style>

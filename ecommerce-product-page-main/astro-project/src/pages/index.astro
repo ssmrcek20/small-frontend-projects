@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ProductImage from '../components/ProductImage.astro';
+import ProductDetails from '../components/ProductDetails.astro';
+---
+
+<Layout title="E-commerce product page">
+	<main>
+		<Nav></Nav>
+		<div class="grid">
+			<ProductImage></ProductImage>
+			<ProductDetails></ProductDetails>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.grid {
+		display: grid;
+	}
+</style>
