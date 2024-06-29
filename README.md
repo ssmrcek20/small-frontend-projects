@@ -20,7 +20,7 @@ Welcome, this is my repository for small frontend projects. Most projects are ch
 | [Results summary component](https://github.com/ssmrcek20/small-frontend-projects/tree/main/results-summary-component-main) | [Demo](https://ssmrcek20.github.io/small-frontend-projects/results-summary-component-main/) | ![Static Badge](https://img.shields.io/badge/1-Beginner-%2373B234) |
 | [Interactive rating component](https://github.com/ssmrcek20/small-frontend-projects/tree/main/interactive-rating-component-main) | [Demo](https://ssmrcek20.github.io/small-frontend-projects/interactive-rating-component-main/) | ![Static Badge](https://img.shields.io/badge/1-Beginner-%2373B234) |
 | [Blog preview card](https://github.com/ssmrcek20/small-frontend-projects/tree/main/blog-preview-card-main) | [Demo](https://ssmrcek20.github.io/small-frontend-projects/blog-preview-card-main/) | ![Static Badge](https://img.shields.io/badge/1-Beginner-%2373B234) |
-| [Notes website](https://github.com/ssmrcek20/small-frontend-projects/tree/main/notes-vue) | Demo | ![Static Badge](https://img.shields.io/badge/1-Beginner-%2373B234) |
+| [Notes website](https://github.com/ssmrcek20/small-frontend-projects/tree/main/notes-vue) | [Demo](https://ssmrcek20.github.io/small-frontend-projects/notes-vue/dist/) | ![Static Badge](https://img.shields.io/badge/1-Beginner-%2373B234) |
 | [Interactive card details form](https://github.com/ssmrcek20/small-frontend-projects/tree/main/interactive-card-details-form-main) | [Demo](https://interactive-card-details-form-k27h.onrender.com/) | ![Static Badge](https://img.shields.io/badge/2-Intermediate-%23E8A530) |
 
 
